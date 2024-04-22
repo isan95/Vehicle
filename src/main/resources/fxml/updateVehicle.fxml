@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="227.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="co.edu.cun.aca3.vehiculo.UpdateVehicleController">
+   <children>
+      <Button fx:id="btnSaveUpdateCar" layoutX="261.0" layoutY="188.0" mnemonicParsing="false" onAction="#saveUpdateCar" text="Guardar" />
+      <TextField fx:id="tFieldBrandUpdCar" layoutX="48.0" layoutY="39.0" promptText="Marca" />
+      <TextField fx:id="tFieldLineUpdCar" layoutX="213.0" layoutY="39.0" promptText="Linea" />
+      <TextField fx:id="tFieldLicenseUpdCar" layoutX="385.0" layoutY="39.0" promptText="Placa" />
+      <ChoiceBox fx:id="cBoxTypeUpdCar" layoutX="212.0" layoutY="118.0" prefWidth="150.0" />
+      <TextField fx:id="tFieldIdUpdCar" editable="false" layoutX="48.0" layoutY="89.0" visible="false" />
+   </children>
+</AnchorPane>

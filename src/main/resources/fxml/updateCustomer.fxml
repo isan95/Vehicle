@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="268.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="co.edu.cun.aca3.vehiculo.UpdateCustomerController">
+   <children>
+      <TextField fx:id="tFieldDniUpdate" layoutX="54.0" layoutY="59.0" />
+      <TextField fx:id="tFieldNameUpdate" layoutX="217.0" layoutY="59.0" />
+      <TextField fx:id="tFieldLastNameUpdate" layoutX="389.0" layoutY="59.0" />
+      <TextField fx:id="tFieldContNumbUpdate" layoutX="120.0" layoutY="141.0" />
+      <TextField fx:id="tFieldAddressUpdate" layoutX="315.0" layoutY="141.0" />
+      <TextField fx:id="tFieldIdUpdate" layoutX="241.0" layoutY="200.0" visible="false" />
+      <Button fx:id="btnSaveUpdate" layoutX="263.0" layoutY="188.0" mnemonicParsing="false" onAction="#saveUpdate" text="Guardar" />
+      <Label layoutX="86.0" layoutY="30.0" text="Documento" />
+      <Label layoutX="238.0" layoutY="30.0" text="Nombres" />
+      <Label layoutX="420.0" layoutY="30.0" text="Apellidos" />
+      <Label layoutX="140.0" layoutY="114.0" text="Numero de contacto" />
+      <Label layoutX="376.0" layoutY="114.0" text="Direccion" />
+   </children>
+</AnchorPane>

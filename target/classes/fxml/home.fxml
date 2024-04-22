@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.cun.aca3.vehiculo.HomeController">
+    <stylesheets>
+       <!-- <URL value="@/styles/home.css" /> -->
+    </stylesheets>
+   <children>
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="408.0" prefWidth="606.0">
+         <children>
+            <TabPane prefHeight="408.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Cliente">
+                     <content>
+                        <TabPane fx:id="tabPaneCustomer" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Registrar cliente">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="tFieldDni" layoutX="68.0" layoutY="80.0" prefHeight="25.0" prefWidth="135.0" promptText="Cedula" />
+                                          <TextField fx:id="tFieldName" layoutX="220.0" layoutY="80.0" prefHeight="25.0" prefWidth="135.0" promptText="Nombre" />
+                                          <TextField fx:id="tFieldLastName" layoutX="384.0" layoutY="80.0" prefHeight="25.0" prefWidth="135.0" promptText="Apellidos" />
+                                          <TextField fx:id="tFieldContactNumber" layoutX="136.0" layoutY="150.0" prefHeight="25.0" prefWidth="135.0" promptText="Numero de contacto" />
+                                          <TextField fx:id="tFieldAddress" layoutX="317.0" layoutY="150.0" prefHeight="25.0" prefWidth="135.0" promptText="Dirección" />
+                                          <Button fx:id="btnSave" layoutX="262.0" layoutY="227.0" mnemonicParsing="false" onAction="#saveCustomer" text="Guardar" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Consultar cliente">
+                              <content>
+                                <AnchorPane fx:id="aPaneCustomer" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tblViewCustomer" layoutX="13.0" layoutY="75.0" prefHeight="220.0" prefWidth="582.0">
+                                            <columns>
+                                              <TableColumn fx:id="tColumnId" prefWidth="75.0" text="Id" visible="false" />
+                                              <TableColumn fx:id="tColumnDni" prefWidth="75.0" text="Documento" />
+                                                <TableColumn fx:id="tColumnName" prefWidth="134.0" text="Nombres" />
+                                                <TableColumn fx:id="tColumnLastName" prefWidth="149.0" text="Apellidos" />
+                                                <TableColumn fx:id="tColumnContNumb" minWidth="7.0" prefWidth="108.0" text="Telefono" />
+                                                <TableColumn fx:id="tColumnAddr" prefWidth="115.0" text="Dirección" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="btnSearchCustomer" layoutX="405.0" layoutY="34.0" mnemonicParsing="false" onAction="#searchCustomer" text="Buscar" />
+                                          <TextField fx:id="tFieldSearchCustomer" layoutX="219.0" layoutY="34.0" promptText="Documento" />
+                                          <Button fx:id="btnDeleteCustomer" layoutX="122.0" layoutY="311.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Borrar" />
+                                          <Button fx:id="btnUpdateCustomer" layoutX="269.0" layoutY="311.0" mnemonicParsing="false" onAction="#showFormUpdateCust" text="Actualizar" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </content>
+                  </Tab>
+                <Tab text="Vehiculo">
+                     <content>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Registrar vehiculo">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="tFieldBrand" layoutX="31.0" layoutY="40.0" promptText="Marca" />
+                                          <TextField fx:id="tFieldLine" layoutX="208.0" layoutY="40.0" promptText="Linea" />
+                                          <TextField fx:id="tFieldLicensePlate" layoutX="390.0" layoutY="40.0" promptText="Placa" />
+                                          <ChoiceBox fx:id="cBoxTypeVehicle" layoutX="208.0" layoutY="112.0" prefWidth="150.0" />
+                                          <Button fx:id="btnSaveVehicle" layoutX="257.0" layoutY="182.0" mnemonicParsing="false" onAction="#saveVehicle" text="Guardar" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Consultar vehiculo">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tblViewCar" layoutX="4.0" layoutY="55.0" prefHeight="240.0" prefWidth="605.0">
+                                            <columns>
+                                              <TableColumn fx:id="tColumnIdCar" prefWidth="75.0" text="Id" visible="false" />
+                                              <TableColumn fx:id="tColumnBrandCar" prefWidth="103.0" text="Marca" />
+                                                <TableColumn fx:id="tColumnLicensePlateCar" minWidth="0.0" prefWidth="143.0" text="Placa" />
+                                                <TableColumn fx:id="tColumnAvailableCar" prefWidth="89.0" text="Disponible" />
+                                                <TableColumn fx:id="tColumnTypeCar" minWidth="2.0" prefWidth="141.0" text="Tipo" />
+                                                <TableColumn fx:id="tColumnLineCar" prefWidth="128.0" text="Linea" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="btnDeleteCar" layoutX="131.0" layoutY="305.0" mnemonicParsing="false" onAction="#deleteCar" text="Eliminar" />
+                                          <Button fx:id="btnUpdateCar" layoutX="276.0" layoutY="305.0" mnemonicParsing="false" onAction="#showUpdateCar" text="Actualizar" />
+                                          <Button fx:id="btnSearchCar" layoutX="336.0" layoutY="20.0" mnemonicParsing="false" onAction="#searchCar" text="Buscar" />
+                                          <TextField fx:id="tFieldSearchCar" layoutX="161.0" layoutY="20.0" promptText="Placa" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </content></Tab>
+                  <Tab text="Alquiler">
+                     <content>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Registrar Alquiler">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ChoiceBox fx:id="cBoxAvailableCar" layoutX="53.0" layoutY="70.0" prefWidth="150.0" />
+                                          <TextField fx:id="tFieldDniCustomerRent" layoutX="276.0" layoutY="70.0" promptText="Documento cliente" />
+                                          <Label layoutX="71.0" layoutY="39.0" text="Vehiculos disponibles" />
+                                          <Button fx:id="btnRent" layoutX="224.0" layoutY="150.0" mnemonicParsing="false" onAction="#rent" text="Alquilar" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Consultar Alquiler">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tblViewRental" layoutY="65.0" prefHeight="200.0" prefWidth="606.0">
+                                            <columns>
+                                              <TableColumn fx:id="tColumnIdRental" prefWidth="75.0" text="Id" visible="false" />
+                                              <TableColumn fx:id="tColumnLicenseRental" prefWidth="148.0" text="Placa" />
+                                                <TableColumn fx:id="tcolumnDniRental" prefWidth="130.0" text="Cedula" />
+                                                <TableColumn fx:id="tColumnStartDate" prefWidth="151.0" text="Fecha alquiler" />
+                                                <TableColumn fx:id="tColumnEndDate" prefWidth="109.0" text="Fecha entrega" />
+                                                <TableColumn fx:id="tColumnDaysRented" prefWidth="67.0" text="Duración" />
+                                            </columns>
+                                          </TableView>
+                                          <ChoiceBox fx:id="cBoxSearchRental" layoutX="43.0" layoutY="24.0" prefWidth="150.0" />
+                                          <TextField fx:id="tFieldSearchRental" layoutX="229.0" layoutY="24.0" />
+                                          <Button fx:id="btnSearchRental" layoutX="406.0" layoutY="24.0" mnemonicParsing="false" onAction="#searchRental" text="Buscar" />
+                                          <Button fx:id="endRental" layoutX="244.0" layoutY="283.0" mnemonicParsing="false" onAction="#endingRental" text="Teminar alquiler" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
